@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  datasource:
+    url: jdbc:mysql://112.124.59.156:3306/study?useSSL=false&serverTimezone=UTC
+    username: study
+    password: Hang0312
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 112.124.59.156
+    port: 6379
+    password: Hang0312
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 60000
+      max-lifetime: 1800000  # 30 minutes
+      connection-timeout: 30000
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+logging:
+  level:
+    com.hmdp: debug
